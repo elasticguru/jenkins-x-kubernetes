@@ -1,6 +1,5 @@
 extends:
-  import: kubernetes
-  file: maven/pipeline.yaml
+  file: ../maven/pipeline.yaml
 agent:
   label: maven-sonar
   container: mavenx
@@ -30,4 +29,3 @@ pipelines:
       - command: mvn sonar:sonar -Dsonar.host.url=$SONARQUBE_URL -Dsonar.login=$SONARQUBE_TOKEN
         comment: Runs sonarqube analysis with mvn command
         name: sonarqube-analysis
-
